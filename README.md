@@ -1,6 +1,6 @@
 # shared-lib-withcredentials
 
-This is an example of a Shared Library using withCredentials to remove the ability of pipeline owners to tinker with and exploit withCredentials requests.
+This is an example of a [Shared Library](https://www.jenkins.io/doc/book/pipeline/shared-libraries/) using withCredentials to remove the ability of pipeline owners to tinker with and exploit withCredentials requests.
 
 Usage:
 * Add this Shared Lib to either the Global Libs or the Folder Libs
