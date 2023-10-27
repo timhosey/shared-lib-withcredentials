@@ -3,6 +3,6 @@ def call(String credentialId) {
     sh "echo User is $userName"
     sh "echo Pass is $userPass"
   }
-  sh "Command outside the credentials block. Password: $userPass"
+  sh "echo Command outside the credentials block. Password: $userPass"
   sh "hostname"
 }
