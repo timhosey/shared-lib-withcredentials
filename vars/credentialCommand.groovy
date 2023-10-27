@@ -1,8 +1,15 @@
 def call(String credentialId) {
   withCredentials([usernamePassword(credentialsId: credentialId, passwordVariable: 'userPass', usernameVariable: 'userName')]) {
-    sh "echo User is $userName"
-    sh "echo Pass is $userPass"
+    sh 'echo userName is $userName'
+    sh 'echo userPass is $userPass'
   }
-  echo "Trying to use the userPass variable outside withCredentials will fail the build."
-  sh "env"
+  echo 'Attempting to use userPass variable outside of withCredentials...'
+  sh '''
+    if [ -n "$userPass" ]; then
+      echo "userPass var is defined: $userPass"
+    else
+      echo "userPass is not defined!"
+    fi
+  '''
+  sh 'env'
 }
