@@ -3,6 +3,12 @@ def call(String credentialId) {
     sh "echo User is $userName"
     sh "echo Pass is $userPass"
   }
-  sh "if [ -z ${userPass} ]; then echo \"var is unset\"; else echo \"var is set to '$var'\"; fi"
+  sh """
+  if [ -n \"$userPass\" ]; then
+    echo "userPass defined: $userPass"
+  else
+    echo "userPass not defined"
+  fi
+  """
   sh "hostname"
 }
