@@ -3,12 +3,6 @@ def call(String credentialId) {
     sh "echo User is $userName"
     sh "echo Pass is $userPass"
   }
-  sh """
-  if [ -n \"$userPass\" ]; then
-    echo "userPass defined: $userPass"
-  else
-    echo "userPass not defined"
-  fi
-  """
+  echo "Trying to use the userPass variable outside withCredentials will fail the build."
   sh "hostname"
 }
