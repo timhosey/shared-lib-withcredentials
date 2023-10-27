@@ -4,5 +4,5 @@ def call(String credentialId) {
     sh "echo Pass is $userPass"
   }
   echo "Trying to use the userPass variable outside withCredentials will fail the build."
-  sh "hostname"
+  sh "env"
 }
